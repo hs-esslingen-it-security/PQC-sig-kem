@@ -1,0 +1,19 @@
+[package]
+name = "pq-sigs"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+ml-dsa = "0.1.0-rc.8"
+slh-dsa = "0.2.0-rc.4"
+falcon-rust = "0.1.2"
+rand_core = "0.10.1"
+rand_chacha = "0.10.0"
+rsa = "0.10.0-rc.17"
+sha2 = "0.11.0"
+signature = "3.0.0-rc.10"
+sqisign-lvl1 = "0.1.1"
+ed25519-dalek = "3.0.0-pre.6"
+pqcrypto = "0.18.1"
+x25519-dalek = "3.0.0-pre.6"
+rand_chacha = "0.10.0"

@@ -1,0 +1,6 @@
+error: duplicate key `rand_chacha` in table `dependencies`
+  --> Cargo.toml:19:1
+   |
+19 | rand_chacha = "0.10.0"
+   | ^
+   |
