@@ -56,8 +56,6 @@ pair to include them in a run.
 - Rust (nightly or stable with `x86_64` target; the code uses
   `core::arch::x86_64::_rdtsc` and `_mm_lfence`, so it currently **only runs
   on x86-64 CPUs** that support the `RDTSC` and `SSE2` instructions)
-- A CPU with a reasonably stable TSC (disable frequency scaling / turbo boost
-  for more reliable measurements, see [Reproducible measurements](#reproducible-measurements))
 
 ## Usage
 
@@ -92,16 +90,6 @@ comparisons:
 - Use enough iterations (`ITER`) to allow discarding warm-up outliers during
   post-processing
 
-## Output format & analysis
-
-Each benchmark binary prints one CSV line per iteration to stdout (no
-header). A typical post-processing step:
-
-1. Load the CSV per algorithm.
-2. Discard the first few iterations (cache/branch-predictor warm-up).
-3. Compute median and percentiles (e.g. p50, p95, p99) per operation.
-4. Compare across algorithms and security levels, and against the classical
-   baselines (RSA-2048, Ed25519, X25519).
 
 ## Project structure
 
@@ -123,5 +111,3 @@ header). A typical post-processing step:
 - SQIsign and HQC crates are less mature than the NIST-standardized
   algorithms; expect higher variance and possible instability across crate
   versions.
-- Cycle counts are not directly comparable across CPU microarchitectures —
-  always benchmark on the target platform you care about.
